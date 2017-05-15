@@ -7,15 +7,19 @@
     "react-dom": "^15.5.4"
   },
   "devDependencies": {
-    "react-scripts": "0.9.5",
-    "@kadira/storybook": "^2.21.0"
+    "@kadira/storybook": "^2.21.0",
+    "glob": "^7.1.1",
+    "mock-require": "^2.0.2",
+    "react-scripts": "0.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "reftest-url": "node ./create_reftest_list.js",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "reftest": "npm run build-storybook && node ./add_shim.js && npm run reftest-url && reftest-runner --list ./reftest-urls.list"
   }
 }
