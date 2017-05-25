@@ -20,6 +20,6 @@
     "reftest-url": "node ./create_reftest_list.js",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
-    "reftest": "npm run build-storybook && node ./add_shim.js && npm run reftest-url && reftest-runner --list ./reftest-urls.list"
+    "reftest": "npm run build-storybook && node ./add_shim.js && npm run reftest-url && reftest-runner --list ./reftest-urls.list -b 'chrome'"
   }
 }
